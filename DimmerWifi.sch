@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:DimmerWifi-rescue
 LIBS:power
 LIBS:device
 LIBS:switches
@@ -31,6 +32,18 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:w_analog
+LIBS:w_connectors
+LIBS:w_device
+LIBS:w_logic
+LIBS:w_memory
+LIBS:w_microcontrollers
+LIBS:w_opto
+LIBS:w_relay
+LIBS:w_rtx
+LIBS:w_transistor
+LIBS:w_vacuum
+LIBS:DimmerWifi-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -84,7 +97,7 @@ U 1 1 59F65990
 P 2600 2000
 F 0 "R1" V 2680 2000 50  0000 C CNN
 F 1 "30k" V 2600 2000 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P7.62mm_Vertical" V 2530 2000 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 2530 2000 50  0001 C CNN
 F 3 "" H 2600 2000 50  0001 C CNN
 	1    2600 2000
 	0    1    1    0   
@@ -95,7 +108,7 @@ U 1 1 59F65B3F
 P 2600 2600
 F 0 "R2" V 2680 2600 50  0000 C CNN
 F 1 "30k" V 2600 2600 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P7.62mm_Vertical" V 2530 2600 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 2530 2600 50  0001 C CNN
 F 3 "" H 2600 2600 50  0001 C CNN
 	1    2600 2600
 	0    1    1    0   
@@ -110,7 +123,7 @@ U 1 1 59F65D40
 P 4600 2200
 F 0 "R5" V 4680 2200 50  0000 C CNN
 F 1 "3.3k" V 4600 2200 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P7.62mm_Vertical" V 4530 2200 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 4530 2200 50  0001 C CNN
 F 3 "" H 4600 2200 50  0001 C CNN
 	1    4600 2200
 	1    0    0    -1  
@@ -125,7 +138,7 @@ U 1 1 59F65F18
 P 1500 2750
 F 0 "J2" H 1500 2850 50  0000 C CNN
 F 1 "Load" H 1500 2550 50  0000 C CNN
-F 2 "TerminalBlocks_Phoenix:TerminalBlock_Phoenix_MPT-2.54mm_2pol" H 1500 2750 50  0001 C CNN
+F 2 "w_conn_mkds:mkds_1,5-2" H 1500 2750 50  0001 C CNN
 F 3 "" H 1500 2750 50  0001 C CNN
 	1    1500 2750
 	-1   0    0    1   
@@ -135,7 +148,7 @@ Wire Wire Line
 Wire Wire Line
 	1700 2300 2350 2300
 $Comp
-L +3.3V #PWR01
+L +3.3V-RESCUE-DimmerWifi #PWR01
 U 1 1 59F65F9C
 P 4600 1950
 F 0 "#PWR01" H 4600 1800 50  0001 C CNN
@@ -148,7 +161,7 @@ $EndComp
 Wire Wire Line
 	4600 1950 4600 2050
 $Comp
-L GND #PWR02
+L GND-RESCUE-DimmerWifi #PWR02
 U 1 1 59F65FE8
 P 4550 2600
 F 0 "#PWR02" H 4550 2350 50  0001 C CNN
@@ -165,7 +178,7 @@ U 1 1 59F6631B
 P 3700 3350
 F 0 "R4" V 3780 3350 50  0000 C CNN
 F 1 "180" V 3700 3350 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P7.62mm_Vertical" V 3630 3350 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 3630 3350 50  0001 C CNN
 F 3 "" H 3700 3350 50  0001 C CNN
 	1    3700 3350
 	0    -1   -1   0   
@@ -173,7 +186,7 @@ $EndComp
 Wire Wire Line
 	3550 3350 3450 3350
 $Comp
-L GND #PWR03
+L GND-RESCUE-DimmerWifi #PWR03
 U 1 1 59F66456
 P 3500 3100
 F 0 "#PWR03" H 3500 2850 50  0001 C CNN
@@ -188,23 +201,12 @@ Wire Wire Line
 Wire Wire Line
 	3500 3150 3500 3100
 $Comp
-L Q_TRIAC_AAG D1
-U 1 1 59F664AA
-P 2250 3200
-F 0 "D1" H 2375 3225 50  0000 L CNN
-F 1 "Q_TRIAC_AAG" H 2375 3150 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-220-3_Vertical" V 2325 3225 50  0001 C CNN
-F 3 "" V 2250 3200 50  0001 C CNN
-	1    2250 3200
-	-1   0    0    1   
-$EndComp
-$Comp
 L R R3
 U 1 1 59F66521
 P 2600 3350
 F 0 "R3" V 2680 3350 50  0000 C CNN
 F 1 "1k" V 2600 3350 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P7.62mm_Vertical" V 2530 3350 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 2530 3350 50  0001 C CNN
 F 3 "" H 2600 3350 50  0001 C CNN
 	1    2600 3350
 	0    -1   -1   0   
@@ -214,7 +216,7 @@ Wire Wire Line
 Wire Wire Line
 	1750 3350 2450 3350
 Wire Wire Line
-	2400 3100 2650 3100
+	2300 3100 2650 3100
 Wire Wire Line
 	2650 3100 2650 3150
 Wire Wire Line
@@ -241,7 +243,7 @@ U 1 1 59F66E81
 P 1500 2300
 F 0 "J1" H 1500 2400 50  0000 C CNN
 F 1 "AC" H 1500 2100 50  0000 C CNN
-F 2 "TerminalBlocks_Phoenix:TerminalBlock_Phoenix_MPT-2.54mm_2pol" H 1500 2300 50  0001 C CNN
+F 2 "w_conn_mkds:mkds_1,5-2" H 1500 2300 50  0001 C CNN
 F 3 "" H 1500 2300 50  0001 C CNN
 	1    1500 2300
 	-1   0    0    1   
@@ -251,9 +253,6 @@ Fase
 Text Label 1750 2300 0    60   ~ 0
 Neutro
 Wire Wire Line
-	2250 3050 2250 2200
-Connection ~ 2250 2200
-Wire Wire Line
 	1700 2650 1750 2650
 Wire Wire Line
 	1750 2650 1750 2300
@@ -262,7 +261,6 @@ Wire Wire Line
 	1700 2750 1750 2750
 Wire Wire Line
 	1750 2750 1750 3350
-Connection ~ 2250 3350
 Wire Wire Line
 	2350 2000 2450 2000
 Wire Wire Line
@@ -286,7 +284,7 @@ U 1 1 59F674F8
 P 5800 2350
 F 0 "J3" H 5800 2550 50  0000 C CNN
 F 1 "Conn_01x04" H 5800 2050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x04_Pitch2.54mm" H 5800 2350 50  0001 C CNN
+F 2 "w_pin_strip:pin_strip_2mm_4" H 5800 2350 50  0001 C CNN
 F 3 "" H 5800 2350 50  0001 C CNN
 	1    5800 2350
 	1    0    0    -1  
@@ -296,25 +294,12 @@ Wire Wire Line
 Wire Wire Line
 	5600 2550 5400 2550
 Wire Wire Line
-	5400 2550 5400 3350
+	5400 3350 5400 2550
 Wire Wire Line
 	4550 2600 4550 2500
 Connection ~ 4550 2500
-$Comp
-L LED D3
-U 1 1 59F678D1
-P 4100 3350
-F 0 "D3" H 4100 3450 50  0000 C CNN
-F 1 "LED" H 4100 3250 50  0000 C CNN
-F 2 "LEDs:LED_D5.0mm" H 4100 3350 50  0001 C CNN
-F 3 "" H 4100 3350 50  0001 C CNN
-	1    4100 3350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	3950 3350 3850 3350
-Wire Wire Line
-	5400 3350 4250 3350
+	3850 3350 5400 3350
 $Comp
 L PWR_FLAG #FLG04
 U 1 1 59F67C36
@@ -344,4 +329,21 @@ Wire Wire Line
 	5400 1900 5400 2000
 Connection ~ 5400 2000
 NoConn ~ 4450 2300
+$Comp
+L TRIAC_BTA Q1
+U 1 1 59F8B5BD
+P 2100 3000
+F 0 "Q1" H 2200 3150 60  0000 C CNN
+F 1 "TRIAC_BTA" H 2400 2750 60  0000 C CNN
+F 2 "w_to:to220" H 2100 3000 60  0001 C CNN
+F 3 "" H 2100 3000 60  0000 C CNN
+	1    2100 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2850 2100 2200
+Connection ~ 2100 2200
+Wire Wire Line
+	2100 3150 2100 3350
+Connection ~ 2100 3350
 $EndSCHEMATC

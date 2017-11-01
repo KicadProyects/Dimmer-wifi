@@ -1,4 +1,4 @@
-update=31/10/2017 14:35:20
+update=1/11/2017 3:07:50 p. m.
 version=1
 last_client=kicad
 [pcbnew]
@@ -73,3 +73,6 @@ LibName41=C:/Program Files/KiCad/share/kicad/library/w_relay
 LibName42=C:/Program Files/KiCad/share/kicad/library/w_rtx
 LibName43=C:/Program Files/KiCad/share/kicad/library/w_transistor
 LibName44=C:/Program Files/KiCad/share/kicad/library/w_vacuum
+LibName45=C:/Program Files/KiCad/share/kicad/library/ESP32-footprints-Shem-Lib
+LibName46=C:/Program Files/KiCad/share/kicad/library/espressif-xess
+LibName47=C:/Program Files/KiCad/share/kicad/library/ESP8266
